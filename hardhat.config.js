@@ -1,16 +1,20 @@
 require("@nomiclabs/hardhat-waffle");
+require("dotenv").config({ path: ".env" });
 
-// The next line is part of the sample project, you don't need it in your
-// project. It imports a Hardhat task definition, that can be used for
-// testing the frontend.
-require("./tasks/faucet");
-
-// If you are using MetaMask, be sure to change the chainId to 1337
 module.exports = {
-  solidity: "0.7.3",
+  solidity: "0.8.1",
   networks: {
-    hardhat: {
-      chainId: 31337
-    }
-  }
+    rinkeby: {
+      url: process.env.ALCHEMY_API_KEY_URL,
+      accounts: [process.env.RINKEBY_PRIVATE_KEY],
+    },
+  },
 };
+
+task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
+  const accounts = await hre.ethers.getSigners();
+
+  for (const account of accounts) {
+    console.log(account.address);
+  }
+});
