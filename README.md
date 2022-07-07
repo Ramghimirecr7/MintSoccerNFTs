@@ -1,8 +1,8 @@
 ## Quick start
 
 ```sh
-git clone https://github.com/nomiclabs/hardhat-hackathon-boilerplate.git
-cd hardhat-hackathon-boilerplate
+git clone https://github.com/Ramghimirecr7/MintSoccerNFTs
+cd MintSoccerNFTs
 npm install
 ```
 
@@ -28,5 +28,4 @@ npm start
 ```
 
 Open [http://localhost:3000/](http://localhost:3000/) to see your Dapp. You will
-need to have [Metamask](https://metamask.io) installed and listening to
-`localhost 8545`.
+need to have [Metamask](https://metamask.io) installed.
